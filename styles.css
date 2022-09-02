@@ -1,0 +1,154 @@
+:root {
+    --color-primary: #BCBFFF;
+    --color-primary-dark: #adb1fe;
+    --color-secondary: #FFE5B9;
+    --color-secondary-dark: #FFDB9C;
+    --color-light: #EFF8FF;
+    --color-black: #333;
+    --color-black-lite: #555;
+    --color-white: #F5F5F5;
+    --color-pure-white: #FFF;
+    --color-grey: #DDD;
+    --color-grey-lite: #EEE;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: var(--color-white);
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0;
+}
+
+/************************* UTILITY classes *************************/
+.container {
+    margin: 0 5%;
+}
+
+.flex-x {
+    display: flex;
+}
+
+.flex-y {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-spaced-center,
+.flex-center {
+    align-items: center;
+}
+
+.flex-spaced {
+    justify-content: space-between;
+}
+
+.flex-spaced-center {
+    justify-content: space-between;
+}
+
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-black-lite) !important;
+    padding: .3em 1em;
+    border-radius: 50px;
+    text-transform: uppercase;
+    box-shadow: 0 1px 1px var(--color-black);
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 2; /* FOR PROPER TEXT ALIGNMENT INSIDE THE BUTTON */
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-dark);
+}
+
+
+/************************************************ CUSTOM styles ************************************************/
+
+/************************* HEADER styles *************************/
+.header {
+    padding: 1em 0;
+    height: 5em;
+}
+
+.header__logo {
+    width: 10em;
+}
+
+nav {
+    gap: 2em;
+    font-size: .85rem;
+}
+
+nav .nav__link {
+    color: var(--color-primary);
+    text-transform: uppercase;
+}
+
+nav .nav__link:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline var(--color-secondary-dark);
+}
+
+#nav__toggle {
+    display: none;
+}
+
+/************************* MEDIA QUERIES *************************/
+@media screen and (max-width: 670px) {
+    #nav {
+        position: absolute;
+        top: 6em;
+        left: 0;
+
+        padding: 2em 5%;
+        background-color: var(--color-grey-lite);
+        width: 100vw;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        transform: translateX(-100%);
+        transition: transform .5s ease-in;
+    }
+    .nav__active {
+        transform: translateX(0);
+
+    }
+    #nav__toggle {
+        display: block;
+
+        border: 1px solid var(--color-primary);
+        padding: 2px;
+        border-radius: 5px;
+    }
+    #nav__toggle:hover {
+        cursor: pointer;
+        background-color: #eee;
+    }
+    #nav__toggle span {
+        display: block;
+        height: 5px;
+        width: 25px;
+        background-color: var(--color-primary);
+        border-radius: 5px;
+    }
+    #nav__toggle span:not(:last-child) {
+        margin-bottom: 2px;
+    }
+    .btn-join {
+        border-radius: 5px;
+    }
+}
